@@ -14,6 +14,28 @@ canBalance([10, 10]) → true
 
 public class CanBalance {
     public static void main(String[] args) {
-        // Please upload your code if you solved this ;)
+        int[] arr = {2, 1, 1, 2, 1};
+        System.out.println(canBalance(arr));
+    }
+
+    private static boolean canBalance(int[] nums) {
+        boolean balanced = false;
+        for (int i = 0; i < nums.length; i++) {
+            int leftSide = 0;
+            int rightSide = 0;
+            for (int j = 0; j < nums.length; j++) {
+                int e = nums[j];
+                if (j <= i) {
+                    leftSide += e;
+                } else {
+                    rightSide += e;
+                }
+            } // end inner loop
+            if (leftSide == rightSide) {
+                balanced = true;
+                break;
+            }
+        } // end outer loop
+        return balanced;
     }
 }
