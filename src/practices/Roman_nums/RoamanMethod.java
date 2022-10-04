@@ -6,7 +6,7 @@ import java.util.Map;
 public class RoamanMethod {
 
     public static String romanNumConvertor(int num) {
-        Map<Integer, String> romNum = new LinkedHashMap(Map.of(
+        Map<Integer, String> romNum = new LinkedHashMap<>(Map.of(
                 1, "I",
                 2, "II",
                 3, "III",
@@ -38,15 +38,15 @@ public class RoamanMethod {
         romNum.put(1000, "M");
         // 2959 = 2000 + 800 + 50 + 9 = (II)CMLIX
 
-        String s = "";
+        String s;
 
-        int multNum = 0;
+
         String StrMult = "1";
         String StrNum = "" + num;
         for (int i = 1; i < StrNum.length(); i++) {
             StrMult += "0";
         }
-        multNum = Integer.parseInt(StrMult);
+        int multNum = Integer.parseInt(StrMult);
 
 
         if (num <= 0) {
